@@ -52,9 +52,9 @@ public class MilkDecorator:CoffeeDecorator
     }
 }
 
-public class SugerDecoator:CoffeeDecorator
+public class SugerDecorator:CoffeeDecorator
 {
-    public SugerDecoator(ICoffee coffee):base(coffee)
+    public SugerDecorator(ICoffee coffee):base(coffee)
     {
         
     }
@@ -82,7 +82,7 @@ class Program
         Console.WriteLine(coffee.GetDescription());
         Console.WriteLine($"Total cost : {coffee.GetCost()}");
 
-        coffee = new SugerDecoator(coffee);
+        coffee = new SugerDecorator(coffee);
         Console.WriteLine(coffee.GetDescription());
         Console.WriteLine($"Total cost : {coffee.GetCost()}");
     }
