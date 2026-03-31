@@ -30,7 +30,7 @@ public abstract class CoffeeDecorator:ICoffee
         return coffee.GetDescription();
     }
 
-    public int GetCost()
+    public double GetCost()
     {
         return coffee.GetCost();
     }
