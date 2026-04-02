@@ -18,14 +18,28 @@ public class Light
 
 public class TurnOnLightCommand:Icommand
 {
-    private class light;
-    public TurnOnLightCommand(Light _light)
+    private class _light;
+    public TurnOnLightCommand(Light light)
     {
-        light = _light;
+        _light = light;
     }
 
     public void Execute()
     {
-        light.TurnOn();
+        _light.TurnOn();
+    }
+}
+
+public class TurnOffLightCommand:Icommand
+{
+    private Light _light;
+    public TurnOffLightCommand(Light light)
+    {
+        _light = light;
+    }
+
+    public void Execute()
+    {
+        _light.TurnOff();
     }
 }
