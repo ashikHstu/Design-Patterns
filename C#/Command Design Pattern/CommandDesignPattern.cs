@@ -3,6 +3,7 @@ using System.Windows.Input;
 public interface Icommand
 {
     void Execute();
+    void Undo();
 }
 
 public class Light
@@ -30,21 +31,31 @@ public class TurnOnLightCommand:Icommand
     {
         _light.TurnOn();
     }
-}
 
-public class TurnOffLightCommand:Icommand
-{
-    private Light _light;
-    public TurnOffLightCommand(Light light)
-    {
-        _light = light;
-    }
-
-    public void Execute()
+    public void Undo()
     {
         _light.TurnOff();
     }
 }
+
+// public class TurnOffLightCommand:Icommand
+// {
+//     private Light _light;
+//     public TurnOffLightCommand(Light light)
+//     {
+//         _light = light;
+//     }
+
+//     public void Execute()
+//     {
+//         _light.TurnOff();
+//     }
+
+//     public void Undo()
+//     {
+//         _light.TurnOn();
+//     }
+// }
 
 public class RemoteControl
 {
@@ -58,6 +69,11 @@ public class RemoteControl
     {
         _command.Execute();
     }
+
+    public void UndoButton()
+    {
+        _command.Undo();
+    }
 }
 
 class Program
@@ -67,14 +83,14 @@ class Program
         Light light = new Light();
 
         Icommand onCommand = new TurnOnLightCommand(light);
-        Icommand offCommand = new TurnOffLightCommand(light);
+       // Icommand offCommand = new TurnOffLightCommand(light);
 
         RemoteControl remote = new RemoteControl();
 
         remote.SetCommand(onCommand);
         remote.PressButton();
-
-        remote.SetCommand(offCommand);
-        remote.PressButton();
+        remote.UndoButton();
+        // remote.SetCommand(offCommand);
+        // remote.PressButton();
     }
 }
