@@ -1,3 +1,5 @@
+using System.Windows.Input;
+
 public interface Icommand
 {
     void Execute();
@@ -41,5 +43,19 @@ public class TurnOffLightCommand:Icommand
     public void Execute()
     {
         _light.TurnOff();
+    }
+}
+
+public class RemoteControl
+{
+    private ICommand _command;
+    public void SetCommand(ICommand command)
+    {
+        _command = command;
+    }
+
+    public void PressButton()
+    {
+        _command.Execute();
     }
 }
