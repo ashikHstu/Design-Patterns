@@ -38,6 +38,8 @@ public class TurnOnLightCommand:Icommand
     }
 }
 
+
+// without undo, it is needed. If we use undo, the undo will do the same things it do.
 // public class TurnOffLightCommand:Icommand
 // {
 //     private Light _light;
