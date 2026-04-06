@@ -24,6 +24,7 @@ public class EmailAdapter:INotification
         _emailService.SendEmail(message);
     }
 }
+
 class Program
 {
     static void Main()
