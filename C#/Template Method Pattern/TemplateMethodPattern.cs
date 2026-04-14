@@ -38,3 +38,17 @@ public class Tea:Beverage
         Console.WriteLine("Adding lemon...");
     }
 }
+
+public class Coffee:Beverage
+{
+    protected override void Brew()
+    {
+        Console.WriteLine("Brewing the coffee...");
+    }
+
+    protected override void AddCondiments()
+    {
+        Console.WriteLine("Adding suger and milk...");
+    }
+
+}
