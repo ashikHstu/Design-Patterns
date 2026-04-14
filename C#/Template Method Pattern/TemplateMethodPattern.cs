@@ -26,3 +26,15 @@ public abstract class Beverage
     protected abstract void AddCondiments(); // must override
 }
 
+public class Tea:Beverage
+{
+    protected override void Brew()
+    {
+        Console.WriteLine("Steeping the tea...");
+    }
+
+    protected override void AddCondiments()
+    {
+        Console.WriteLine("Adding lemon...");
+    }
+}
