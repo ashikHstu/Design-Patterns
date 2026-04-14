@@ -50,5 +50,20 @@ public class Coffee:Beverage
     {
         Console.WriteLine("Adding suger and milk...");
     }
+}
 
+class Program
+{
+    static void Main()
+    {
+        Beverage tea = new Tea();
+        Console.WriteLine("Making Tea:");
+        tea.PrepareRecipe();
+
+        Console.WriteLine();
+
+        Beverage coffee = new Coffee();
+        Console.WriteLine("Making coffee: ");
+        coffee.PrepareRecipe();
+    }
 }
