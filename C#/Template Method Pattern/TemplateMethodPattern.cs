@@ -26,7 +26,6 @@ public abstract class Beverage
     protected abstract void AddCondiments(); // must override
 }
 
-
 public class Tea:Beverage
 {
     protected override void Brew()
